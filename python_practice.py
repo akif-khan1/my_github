@@ -15,7 +15,7 @@ while (b=="tea"):
         print('\nwelcome to my first login program!')
     else:
         b = "tea"
-        print ('\nincorrect! enter username and password again')
+        print ('\nFailed! enter username and password again')
 
 print('\nOk, you are done')
 

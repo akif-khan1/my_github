@@ -341,9 +341,10 @@
 # my_file = open("bear.txt")
 # print (my_file.read()[:91])
 
-def findi(charc, filepath):
-        file = open(filepath)
-        content = file.read()
-        return content.count(charc)
+# def findi(charc, filepath):
+#         file = open(filepath)
+#         content = file.read()
+#         return content.count(charc)
 
-print (findi('d', 'testi.txt'))
+# print (findi('d', 'testi.txt'))
+

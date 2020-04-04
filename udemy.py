@@ -80,21 +80,21 @@
 
                            # Defining a function to get average value of list as well as dictionary. smart function
 
-def avrg(value):
-    if type(value) == dict:
-        the_avrg = sum(value.values()) / len(value)
-    else:
-        the_avrg = sum(value) / len(value)
-    return the_avrg
+# def avrg(value):
+#     if type(value) == dict:
+#         the_avrg = sum(value.values()) / len(value)
+#     else:
+#         the_avrg = sum(value) / len(value)
+#     return the_avrg
 
 
                             ## this is another example to write this code in using true #
-def avrg(value):
-    if isinstance(value, dict):
-        the_avrg = sum(value.values()) / len(value)
-    else:
-        the_avrg = sum(value) / len(value)
-    return the_avrg
+# def avrg(value):
+#     if isinstance(value, dict):
+#         the_avrg = sum(value.values()) / len(value)
+#     else:
+#         the_avrg = sum(value) / len(value)
+#     return the_avrg
 
 
                         # these lines for testing above conditional function #
@@ -259,11 +259,91 @@ def avrg(value):
 #     else:
 #         continue
 
+                        ## udemy program practice with defining a function ##
+# def sentence_maker(phrase):
+#     introgatives = ('why', 'what', 'how', 'is', 'will')
+#     capitalized = phrase.capitalize()
+#     if phrase.startswith(introgatives):
+#         return "{}?".format(capitalized)
+#     else:
+#         return "{}.".format(capitalized)
 
-while True:
-    x = input('Say something')
-    print (x.capitalize())
-    if x == "\\end":
-        break
-    else:
-        continue
+# results = []
+# while True:
+#     user_input = input("Say something: ")
+#     if user_input == "\end":
+#         break
+#     else:
+#         results.append(sentence_maker(user_input))
+
+# print (" ".join(results))
+
+
+                        ## Simple List Comprehension ##
+
+# temps = [230, 341, 290, 190]
+
+# new_temps = []
+# for temp in temps:
+#     new_temps.append(temp / 10)
+
+# print (new_temps)         ## above lines of code in list comprehension be like ##
+
+# new_temps = [temp / 10 for temp in temps]
+# print (new_temps)        ## conditional list comprehension be like ##
+
+# temps = [230, 341, 290,-9999, 190]
+# new_temps = [temp / 10 for temp in temps if temp != -9999]
+# print (new_temps)
+
+
+        ## exercises ##
+
+# def foo(lst):
+#    return [i for i in lst if not isinstance(i, str)]   ## to print only int from a mixed list function ##
+
+# x = [2,3,4,5,'inta', 'janu']
+# print(foo(x))
+                ## function to print only greater numbers from a list ##
+# def foo(lst):
+#    return [i for i in lst if i > 0]
+
+# x = [12, 3, -34, 50, -1000]
+# print (foo(x))
+                        ## List comprehension syntax with if else condition ##
+# temps = [230, 341, 290,-9999, 190]
+# new_temps = [temp / 10 if temp != -9999 else 0 for temp in temps ]
+# print (new_temps)
+
+
+                ## define a function which returns same list but replace strings into zeros ##
+
+# def foo(lst):
+#     return [i if not isinstance(i, str) else 0 for i in lst ]
+
+# x = [2,3,4,5,'inta', 'janu']
+# print(foo(x))
+
+                ## define a function that sum up float numbers in list as string ##
+
+# def foo(lst):
+#     return sum([float(i) for i in lst])
+
+# x = ['1.2', '2.3', '4.7', '5.1']
+# print (foo(x))
+
+
+                                ## file processing in python ##
+
+# my_file = open("testi.txt")
+# print (my_file.read())
+
+# my_file = open("bear.txt")
+# print (my_file.read()[:91])
+
+def findi(charc, filepath):
+        file = open(filepath)
+        content = file.read()
+        return content.count(charc)
+
+print (findi('d', 'testi.txt'))

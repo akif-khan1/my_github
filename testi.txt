@@ -1,0 +1,10 @@
+Dears,
+
+Please find attached document and ask end user to follow the steps in the document.
+All screens and communication settings should be same for successfull connection.
+
+Kindly note that correct IP for Dimension Analyzer is 10.140.24.4
+
+Feel free to contact for any further assistance.
+
+Thanks.

@@ -260,10 +260,20 @@ def avrg(value):
 #         continue
 
 
+def sentese_maker(phrase):
+    interogatives = ('what', 'why', 'how')
+    capitalized = (phrase.capitalize())
+    if phrase.startswith(interogatives):
+        return "{}?".format(capitalized)
+    else:
+        return "{}.".format(capitalized)
+
+restults = []
 while True:
-    x = input('Say something')
-    print (x.capitalize())
-    if x == "\\end":
+    user_input = input('Say something! ')
+    if user_input == "\end":
         break
     else:
-        continue
+        restults.append(sentese_maker(user_input))
+
+print (" ".join(restults))

@@ -302,7 +302,7 @@
 # def foo(lst):
 #    return [i for i in lst if not isinstance(i, str)]   ## to print only int from a mixed list function ##
 
-# x = [2,3,4,5,'inta', 'janu']
+# x = [2,3,4,5,'inta', 'jan']
 # print(foo(x))
                 ## function to print only greater numbers from a list ##
 # def foo(lst):
@@ -327,24 +327,12 @@
                 ## define a function that sum up float numbers in list as string ##
 
 # def foo(lst):
-#     return sum([float(i) for i in lst])
+#         '''this function sum up float numbers in list as string'''   ## This is called a doc string ##
+#         return sum([float(i) for i in lst])
 
 # x = ['1.2', '2.3', '4.7', '5.1']
-# print (foo(x))
+# # print (foo(x))
+# print (foo.__doc__)  # doc string can be checked like this ##
 
-
-                                ## file processing in python ##
-
-# my_file = open("testi.txt")
-# print (my_file.read())
-
-# my_file = open("bear.txt")
-# print (my_file.read()[:91])
-
-# def findi(charc, filepath):
-#         file = open(filepath)
-#         content = file.read()
-#         return content.count(charc)
-
-# print (findi('d', 'testi.txt'))
+                               
 

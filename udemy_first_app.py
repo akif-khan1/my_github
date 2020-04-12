@@ -1,6 +1,6 @@
 import json
 from difflib import get_close_matches
-data = json.load(open("data.json"))
+data = json.load(open("/Users/3kifkhan/Downloads/AL_NAFI/PYTHON/data.json"))
 def translate(w):
     w = w.lower()
     if w in data:
@@ -26,3 +26,4 @@ if type(output) == list:
         print(item)
 else:
     print(output)
+    

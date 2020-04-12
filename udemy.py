@@ -336,3 +336,23 @@
 
                                
 
+<<<<<<< HEAD
+def sentese_maker(phrase):
+    interogatives = ('what', 'why', 'how')
+    capitalized = (phrase.capitalize())
+    if phrase.startswith(interogatives):
+        return "{}?".format(capitalized)
+    else:
+        return "{}.".format(capitalized)
+
+restults = []
+while True:
+    user_input = input('Say something! ')
+    if user_input == "\end":
+        break
+    else:
+        restults.append(sentese_maker(user_input))
+
+print (" ".join(restults))
+=======
+>>>>>>> e0b1482f7ce685fa04120dfcfd38ec3f6b24f667

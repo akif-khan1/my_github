@@ -336,7 +336,6 @@
 
                                
 
-<<<<<<< HEAD
 def sentese_maker(phrase):
     interogatives = ('what', 'why', 'how')
     capitalized = (phrase.capitalize())
@@ -354,5 +353,3 @@ while True:
         restults.append(sentese_maker(user_input))
 
 print (" ".join(restults))
-=======
->>>>>>> e0b1482f7ce685fa04120dfcfd38ec3f6b24f667

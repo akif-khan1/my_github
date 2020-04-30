@@ -1,7 +1,7 @@
 import json
 from difflib import get_close_matches
                                                                             # >>> SequenceMatcher(None, "rain", "rainn").ratio()
-data = json.load(open('data.json'))
+data = json.load(open('D:/Python/Udemy/data.json'))
 
 def translate(w):
     w = w.lower()
@@ -22,13 +22,25 @@ def translate(w):
     else:
         return "Word doesn't exist, please double check it!"
 
-word = input('enter a word to translate!\n     ""')
 
-output = (translate(word))
+# word = input('enter a word to translate!\n     ""')
 
-if type(output) == list:
-    print ("\n".join(output))
-    # for item in output:       # I used join method instead of iterate with for loop #
-    #     print(item)
-else:
-    print (output)
+# output = (translate(word))
+
+# if type(output) == list:
+#     print ("\n".join(output))
+#     # for item in output:       # I used join method instead of iterate with for loop #
+#     #     print(item)
+# else:
+#     print (output)
+
+
+while True:
+    word = input('enter a word to translate!\n')
+    output = (translate(word))
+    if word == '\end':
+        break
+    elif type(output) == list:
+        print ("\n".join(output))
+    else:
+        print(output)

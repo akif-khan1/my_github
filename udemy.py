@@ -336,20 +336,95 @@
 
                                
 
-def sentese_maker(phrase):
-    interogatives = ('what', 'why', 'how')
-    capitalized = (phrase.capitalize())
-    if phrase.startswith(interogatives):
-        return "{}?".format(capitalized)
-    else:
-        return "{}.".format(capitalized)
+# def sentese_maker(phrase):
+#     interogatives = ('what', 'why', 'how')
+#     capitalized = (phrase.capitalize())
+#     if phrase.startswith(interogatives):
+#         return "{}?".format(capitalized)
+#     else:
+#         return "{}.".format(capitalized)
 
-restults = []
-while True:
-    user_input = input('Say something! ')
-    if user_input == "\end":
-        break
-    else:
-        restults.append(sentese_maker(user_input))
+# restults = []
+# while True:
+#     user_input = input('Say something! ')
+#     if user_input == "\end":
+#         break
+#     else:
+#         restults.append(sentese_maker(user_input))
 
-print (" ".join(restults))
+# print (" ".join(restults))
+
+
+# name, age = input('please type name and age: ').split('.')
+# print ('my name is %s and I am %s years old' %(name, age))
+
+import pandas
+
+# df1 = pandas.read_excel("D:\\Python\\jupyter notebook\\test3\\pandas\\supermarkets.xlsx", sheet_name=0)   # for excel need to define sheet parameter
+# df1 = pandas.read_csv("D:\\Python\\jupyter notebook\\test3\\pandas\\supermarkets-semi-colons.txt" , sep=";")     # for any character separated value
+# df1 = pandas.read_csv("D:\\Python\\jupyter notebook\\test3\\pandas\\supermarkets-dots.txt" , sep=".")    #  for any character seperated value
+df1 = pandas.read_csv("D:\\Python\\jupyter notebook\\test3\\pandas\\data.txt", header=None)   # if no headers there, need to use header=None
+
+df1.columns = ['ID','Address','City','ZIP','Country','Name','Employee']      # defining own column names 
+
+# df1.set_index("ID")   # to set ID as index column need this command but it will not 
+# df2 = df1.set_index("ID")
+# df1.set_index("ID" , inplace=True)
+
+# print (df1)
+                                        ###### label based indexing #
+# print (df1.loc["1":"2","Country":"Name"])
+# print (list(df1.loc[:,"ZIP"]))
+
+# df1.set_index('Address', inplace=True , drop=None)
+# print (df1)
+
+# x = df1.loc['1':'3','ID':'City']
+# x = df1.loc[3,'Name']
+# x = df1.loc[:,'Country']
+# x = list(df1.loc[:,'Country'])
+
+                                        ##### another way of indexing
+
+# x = df1.iloc[3,:1]                     #### in this case most upper is not bound means last defined value need +1 column or row
+# print (x)
+
+                                ####### deleting index (rows) or columns. 0 for index and 1 for column in the argument.
+
+# m = df1.drop('Country',1)      ## to delete Country column
+# print (df1)
+
+# m = df1.drop(0,0)               ### to delete 1st row from table
+# print (m)
+
+# m = df1.drop(df1.index[2:5],0)
+# m = df1.drop(df1.index[0:5],0)
+# print (m)
+
+# m = df1.drop(df1.columns[0:3],1)                #### deleting columns using index method
+# print (m)
+                                ##### to check length of rows and columns of pandas dataframe or files
+# print (df1)
+# x = len(df1.index)
+# y = len(df1.columns)
+# print (x,y)
+                ##### adding new columns 
+
+# df1['Continent'] = df1.shape[0]*['North Karachi']        #### this is how we can add a new column
+# print (df1)
+                                ###### modifying a column value with another column value can be manipulated the way you want
+# df1['Continent'] = df1['Country'] + ',' + 'North Karachi'
+# print (df1)
+
+
+
+                        ##### adding a new row is a bit tricky using transpose method
+df1_t = df1.T
+df1_t['6'] = df1_t.shape[0]*['testing']
+# # df1_t['7'] = df1_t['test1'], df1_t['test2']
+df1_t.loc['ID','6'] = '7'
+
+df1 = df1_t.T
+
+
+print (df1)

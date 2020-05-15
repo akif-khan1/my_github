@@ -419,12 +419,12 @@ df1.columns = ['ID','Address','City','ZIP','Country','Name','Employee']      # d
 
 
                         ##### adding a new row is a bit tricky using transpose method
-df1_t = df1.T
-df1_t['6'] = df1_t.shape[0]*['testing']
-# # df1_t['7'] = df1_t['test1'], df1_t['test2']
-df1_t.loc['ID','6'] = '7'
+# df1_t = df1.T
+# df1_t['6'] = df1_t.shape[0]*['testing']
+# # # df1_t['7'] = df1_t['test1'], df1_t['test2']
+# df1_t.loc['ID','6'] = '7'
 
-df1 = df1_t.T
+# df1 = df1_t.T
 
 
-print (df1)
+# print (df1)

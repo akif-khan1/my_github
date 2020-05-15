@@ -4,3 +4,5 @@ jupyter notebook/test3/pandass/
 *.csv
 *.json
 *.zip
+*.ipynb
+*docx
